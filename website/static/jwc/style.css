@@ -1,0 +1,413 @@
+@charset "GBK";
+
+.style_last {border-top:0px;border-left:0px;border-bottom:0px;}
+.style_right { border-top:0px;border-left:0px;border-right:0px}
+.style_normal { border-top:0px;border-left:0px;} 
+.style_lastRight {border-top:0px;border-left:0px;border-bottom:0px;border-right:0px}
+
+BODY {
+     margin-left: 0px;
+	 margin-top: 0px;
+	 margin-right: 0px;
+	 margin-bottom: 0px;
+	 overflow-y: auto;
+	 background-image:url(../images/back1.gif);
+	 SCROLLBAR-FACE-COLOR: #C5D5FC;
+     SCROLLBAR-HIGHLIGHT-COLOR: #c1c1bb;
+     SCROLLBAR-SHADOW-COLOR: #c1c1bb; 
+     SCROLLBAR-3DLIGHT-COLOR: #009ACE;
+     SCROLLBAR-ARROW-COLOR: #ffffff;
+	 SCROLLBAR-TRACK-COLOR: #f4f4f0; 
+     SCROLLBAR-DARKSHADOW-COLOR: #ebebe4;	 
+}
+A { 
+	color: #000000;
+	text-decoration : underline;
+}
+A:visited {
+	color: #3232CD;
+}
+A:hover {
+	color: #ff6600;
+}
+A.menu {
+    color:#000000;
+    font-size: 12px;
+	line-height: 22px;
+	text-decoration: none;
+}
+A.menu:link {
+    color:#000000;
+    font-size: 12px;
+	line-height: 22px;
+	text-decoration: none;
+}
+A.menu:hover {
+    color:#dd6900;
+    font-size: 12px;
+	line-height: 22px;
+	text-decoration: none;
+}
+A.menu:visited {
+    color:#000000;
+    font-size: 12px;
+	line-height: 22px;
+	text-decoration: none;
+}
+# {color: #000000;}
+
+FIELDSET {
+	border: #088474 1px solid; 
+	padding: 2px;
+	width: 100%;
+}
+LEGEND {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+	line-height: 22px;
+}
+P {
+	text-indent: 2em;
+}
+TD {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	color: #000000;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+A.handle:visited {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #C10100;
+	text-decoration: underline;
+}
+A.handle:hover {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #ff6600;
+	text-decoration: none;
+}
+A.handle:link {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #ff6600;
+	text-decoration: none;
+}
+
+
+/*=============================================================================================*/
+H1{
+    color:#6666ff;
+    font-family:courier;
+    font-size:10pt;
+}
+
+/*文本域*/
+
+TEXTAREA.textarea {
+	border-right: #b6b9cb 1px solid; 
+	border-top: #b6b9cb 1px solid; 
+	border-left: #b6b9cb 1px solid; 
+	border-bottom: #b6b9cb 1px solid;
+	font-size: 12px;
+	background: #F7FBFF; 
+}
+
+/*文本框*/
+INPUT.text {
+	border-right: #b6b9cb 1px solid; 
+	border-top: #b6b9cb 1px solid;
+    border-left: #b6b9cb 1px solid; 
+	border-bottom: #b6b9cb 1px solid; 
+	font-size: 12px;
+	background: #F7FBFF; 
+	height:18px
+}
+
+
+INPUT.button {
+ BORDER-RIGHT: #7b9ebd 1px solid; 
+ PADDING-RIGHT: 2px; 
+ BORDER-TOP: #7b9ebd 1px solid; 
+ PADDING-LEFT: 2px; 
+ FONT-SIZE: 12px; 
+ FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); 
+ BORDER-LEFT: #7b9ebd 1px solid; 
+ CURSOR: hand; 
+ COLOR: black; 
+ PADDING-TOP: 2px; 
+ BORDER-BOTTOM: #7b9ebd 1px solid
+} 
+.tableBorder1 {
+	BORDER-RIGHT: 1px;
+	 BORDER-TOP: 1px; 
+	 BORDER-LEFT: 1px; 
+	 WIDTH: 97%; 
+	 BORDER-BOTTOM: 1px; 
+	 BACKGROUND-COLOR: #ff0000
+}
+/*定义竖向表格颜色*/
+.table1{
+
+	border: 1px;
+	/*cellspacing: 3
+	solid: #999999;
+	bgcolor:#999999;
+	border-color: #999999;
+	*/
+	background-color:#009ACE;
+}
+TD.left{
+	background-color:  #cee9fe;
+	height: 23px;
+} 
+TD.right{
+	background-color:  #F7FBFF;
+	height: 23px;
+
+} 
+
+/*定义横向表格颜色*/
+.table{
+ 
+    border:1px;
+	/*
+	cellspacing: 3
+	solid: #999999;
+	bgcolor:#999999;
+	border-color: #999999;
+	*/
+	background-color:#009ACE  ;
+}
+	
+
+/*奇数单元行,不算表格头部*/
+TR.odd {
+	background-color: #cee9fe;
+	height: 23px;
+		
+} 
+
+/*偶数单元行*/
+TR.even {
+	background-color: #F7FBFF;
+	height: 23px;
+}
+
+/*标题单元行*/
+TR.title {
+	font-size: 14px;
+    color: #FF0000;
+	background-color: #ddeeff;
+	font-weight: bold;	
+	background-image:url(../images/titlebg.gif);
+	//vertical-align: cneter;
+	//text-align: center;
+	height: 24px;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*
+oldname:help-table-line 用来修饰一般水平线
+*/
+HR.hr {
+	//color: #999999;
+	//height: 1px;
+	text-align: center;
+  //  BACKGROUND-IMAGE:  url(../images/tiao.gif);
+}
+/*
+oldname:reg-table-line 用来修饰应用在表格内部的水平线
+*/
+HR.hrInsideTab {
+	color: #ABC4E4;
+	height: 1px;
+	
+	text-align: center;
+}
+/*圆角标题表格专用样式1-4*/
+.roundTitle_01 {
+	background-image: url(../images/roundtitle/01.gif);
+	width:12px;
+	height:25px
+}
+
+.roundTitle_02 {
+	background-image: url(../images/roundtitle/02.gif);
+	font-size:10pt;
+	font-weight:600;
+	letter-spacing:1px; 
+	text-indent:5px;
+	padding-right: 17px
+}
+
+.roundTitle_03 {
+	background-image: url(../images/roundtitle/03.gif);
+	width:30px;
+	height:25px
+}
+
+.roundTitle_04 {
+	background-image: url(../images/roundtitle/04.gif)}
+
+
+/*
+版权信息
+*/
+.text_copyright {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	color: #ffffff;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+}
+/*
+突出显示的字体
+*/
+.text_emphasis {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+}
+/*
+红色信息文字，使用于“*”号公告等内容
+*/
+.text_info {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #FF0000;
+}
+/*
+oldname:text-search-field 修饰搜索框内带缩进的文字
+*/
+.text_IndentSearch {
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	text-indent: 0.5em;
+	height: 22px;
+}
+
+
+/* displaytag表格排序图片 开始 */
+/*翻页样式*/
+span.pagebanner {
+	height: 22px;
+	font-family:"宋体";
+	    border: 0px dotted #999;
+        padding: 2px 4px 2px 4px;
+        width: 100%;
+        margin-top: 8px;
+		margin-left: 0px;
+        display:block;
+        border-bottom: none;
+		font-size: 12px;
+
+}
+/*翻页样式*/
+span.exportlinks {
+	height: 22px;
+	font-family:"宋体";
+	    border: 0px dotted #999;
+        padding: 2px 4px 2px 4px;
+        width: 100%;
+        display:block;
+        border-top: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        text-align:left;
+		font-size: 12px;
+
+}
+/*翻页样式*/
+span.pagelinks {
+	height: 22px;
+	font-family:"宋体";
+	    border: 0px dotted #999;
+        padding: 2px 4px 2px 4px;
+        width: 100%;
+        display:block;
+        border-top: none;
+        margin-top: -22px;
+        margin-left: 300px;
+        margin-bottom: -5px;
+        text-align:right;
+		font-size: 12px;
+}
+div,a,span{
+	margin:0;
+	padding:0;
+	font-size: 12px;
+	background-repeat:no-repeat;
+	list-style-type:none;
+	text-decoration: none;
+}
+th.sorted {
+    background-color: orange;
+}
+th a, th a:visited {
+  color: black;
+  text-decoration: none;
+}
+th a:hover {
+  text-decoration: underline;
+  color: black;
+}
+th {
+	padding: 2px 4px 2px 4px;
+	text-align: center;
+	vertical-align: top;
+}
+th.sorted a, th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+th.sortable a {
+	background-image: url(../images/arrow_off.png);
+}
+th.order1 a {
+	background-image: url(../images/arrow_down.png);
+}
+th.order2 a {
+	background-image: url(../images/arrow_up.png);
+}
+span.export {
+	padding: 0 4px 1px 20px;
+	display:inline; display:inline-block;
+	cursor: pointer;
+}
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+	font-family: "Arial", "Helvetica", "sans-serif","SimSun";
+	font-size: 12px;
+	color: #C10100;
+	text-decoration: underline;
+}
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+}
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+}
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+}
+div.exportlinks {
+	background-color: #ffffff;
+	border: 0px dotted #999;
+	padding: 4px 4px 2px 4px;
+	margin: -5px 0 10px 0;
+	width: 100%;
+}
+
+/* displaytag表格排序图片 结束 */s

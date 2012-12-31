@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JwcHack</title>
+    <link rel="stylesheet" type="text/css" href="/static/site.css" />
+    <link rel="stylesheet" type="text/css" href="/static/jwchack.css" />
+
+</head>
+<body>
+    <div id="container">
+        <h1><span itemprop="name">JwcHack</span> <small itemprop="description">grab grades for you.</small></h1>
+        <div>
+            <h3>Submit your account</h3>
+            <form action="/submit" method="post">
+                <div>
+                    <p><span>学号</span><input type="text" name="uid" size="15" class="textfield" ></p>
+                    <p><span>密码</span><input type="password" name="passwd" size="15" class="textfield"></p>
+                    <p><span>邮箱</span><input type="email" name="email" size="15" class="textfield"></p>
+                </div>
+                <div><input id="submit" type="submit" value="submit"></div>
+            </form>
+        </div>
+        <div>
+            <h3>New Users...</h3>
+            <ul>
+                {% if newUsers %}
+                    {% for user in newUsers %}
+                    <li>{{ user.student_no|escape }} sign up at {{ user.date }}</li>
+                    {% endfor %}
+                {% else %}
+                    <p class="note">None yet.</p>
+                {% endif %}
+            </ul>
+        </div>
+        <div>
+            <h3>Already Done...</h3>
+            <ul>
+                {% if doneUsers %}
+                    {% for user in doneUsers %}
+                    <li>{{ user.student_no|escape }} done at {{ user.done_date }}</li>
+                    {% endfor %}
+                {% else %}
+                    <p class="note">None yet.</p>
+                {% endif %}
+            </ul>
+        </div>
+        <script type='text/javascript'>
+            (function() {
+                var c = document.createElement('script');
+                c.type = 'text/javascript';
+                c.async = true;
+                c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/48118';
+                var h = document.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(c, h);
+            })();
+        </script>
+    </div>
+</body>
+</html>

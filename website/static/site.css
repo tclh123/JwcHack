@@ -1,0 +1,129 @@
+/* css learn from http://mouapp.com/ */
+body {
+    font-family: "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+    width: 1014px;
+    margin: 30px auto;
+    padding: 0;
+    color: #333;
+    text-align: justify
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center
+}
+h1 small {
+    font-size: 18px
+}#overview {
+     display: none
+ }
+h2 {
+    text-align: center;
+    margin-top: 60px
+}
+h3 {
+    margin-left: 55px;
+    margin-right: 55px;
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed#aaa
+}
+h3:hover {
+    color: #999;
+}
+blockquote {
+    margin: 0;
+    margin-left: 62px;
+    margin-right: 62px;
+    padding: 0;
+    font-family: georgia,
+    serif;
+    font-style: italic
+}
+blockquote: before {
+    content: "\201C";
+    font-size: 40px;
+    margin-left: -10px;
+    font-family: georgia,
+    serif;
+    color: #eee
+}
+blockquote p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    font-style: italic;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0
+}
+p {
+    margin-bottom: 16px;
+    padding: 0;
+    margin-left: 55px;
+    margin-right: 55px;
+    line-height: 24px
+}
+.right {
+    text-align: right
+}
+
+#download small {
+    font-size: 16px;
+    color: #80808f
+}#dl {
+     text-align: center;
+     padding-top: 90px;
+     padding-bottom: 0
+ }#require {
+      font-family: georgia,
+      serif;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 50px
+  }#require a {
+       margin-left: 15px
+   }
+a {
+    text-decoration: underline;
+    color: #555
+}
+.note {
+     font-family: georgia,
+     serif;
+     font-style: italic;
+     margin-bottom: 40px
+ }
+a:hover {
+    color: #999;
+    text-decoration: none
+}#madeby {
+     margin-top: 50px;
+     margin-bottom: 0;
+     text-align: center
+ }#madeby a {
+      text-decoration: none;
+      color: #000
+  }#madeby a:hover {
+       color: #aaa
+   }#biglogo {
+        display: block;
+        margin: 0 auto
+    }
+code {
+    padding: 0 3px 2px;
+    font-family: Monaco,
+    Andale Mono,
+    Courier New,
+    monospace;-webkit-border-radius: 3px;-moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 14px
+}

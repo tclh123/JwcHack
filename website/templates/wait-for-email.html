@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JwcHack - 等待邮件</title>
+    <link rel="stylesheet" type="text/css" href="/static/site.css" />
+    <link rel="stylesheet" type="text/css" href="/static/jwchack.css" />
+
+</head>
+<body>
+    <div id="container">
+        <div>
+            <a href="/">Go Back</a>
+        </div>
+        <p>尊敬的{{ user.student_no }}：</p>
+        <p>哎，似乎我们伟大的Jwc又崩了哦~~(╯﹏╰)b</p>
+        <p>JwcHack 已将您的数据加入后台，会在抓取到数据的第一时间发送邮件到 {{ user.email }} 哦~</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+cron:
+- description: grab grades.
+  url: /tasks/work
+  schedule: every 3 minutes
