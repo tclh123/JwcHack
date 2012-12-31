@@ -83,7 +83,8 @@ class HttpHelper:
             m = re.match(r'(.*?)=(.*?);', str_set_ck)
             if m:
                 if m.group(2) != 'deleted':
-                    self.add_cookie(m.group(1), m.group(2), '')    #理论上不用了，开始是因为登陆后跨域了，cookie的domain不一样
+                    self.add_cookie(m.group(1), m.group(2), '')
+        logging.info(url)
         return resp.content
     def _getHeaders(self, cj):
         headers = {

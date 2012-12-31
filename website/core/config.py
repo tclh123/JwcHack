@@ -23,5 +23,5 @@ URL_ACTION = {
 }
 
 def getURL(student_no, action, network=''):
-    ip = IP_Telecom_Network if network == 'Telecom' else IP_Campus_Network
+    ip = IP_Telecom_Network if network != 'Campus' else IP_Campus_Network
     return 'http://' + ip + getURL_BASE(student_no) + URL_ACTION[action]

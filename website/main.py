@@ -4,10 +4,14 @@ __author__ = 'tclh123'
 
 import os
 import urllib
+import hashlib
+import re
 
 import core
 import models
 import util
+#import httphelper
+#import config
 
 import webapp2
 import jinja2
@@ -39,34 +43,75 @@ class MainPage(webapp2.RequestHandler):
 
 class Submit(webapp2.RequestHandler):
     def post(self):
-        uid = self.request.get('uid')
+        student_no = self.request.get('uid')
         passwd = self.request.get('passwd')
         email = self.request.get('email')
-        if len(uid)<8 or len(passwd)<6 or len(email)<5:  # TODO 验证不符合要求的输入
+        if len(student_no)<8 or len(passwd)<6 or len(email)<5:  # TODO 验证不符合要求的输入
             self.redirect('/')
+            return
 
-        try:
-            user = models.User(key_name=uid)    # uid is key.
-            user.student_no = uid
+        # Grab!
+        #grades = core.jwc.Grades(student_no, passwd)
+        #content = grades.getGrades()
+
+        ############ START      #TODO 本地没问题，传上GAE去有问题，http的cookie保存不住？？搞不出来，暂时不想搞了，头大
+
+        http = core.httphelper.HttpHelper()
+
+        html = http.get(core.config.getURL(student_no, 'Login'))        # 登陆页面
+
+        m = re.search('var sharedValue = (-?\d+)', html)
+        shared_value = m.group(1)
+
+        m = hashlib.md5()
+        m.update(passwd)
+        first = m.hexdigest()
+        m = hashlib.md5()
+        m.update(first + shared_value)
+        ret = m.hexdigest()
+
+        passwd = ret
+
+        logging.info(http.cj)
+
+        logging.info('login post')
+        http.post(core.config.getURL(student_no, 'UsersControl'),
+            uid = student_no,
+            password = passwd,
+            command = 'studentLogin'
+        )
+
+        cj = http.cj #backup
+
+        http = core.httphelper.HttpHelper()
+        http.cj = cj
+
+        logging.info(http.cj)
+
+        logging.info('query get')
+        html = http.get(core.config.getURL(student_no, 'query_person_score'))
+
+#        http = core.httphelper.HttpHelper()
+#        http.add_cookie('JSESSIONID', value, '125.76.215.232')
+        logging.info(http.cj)
+
+        c = re.compile(r'(.*?)<body>(.*?)</body>', re.S)
+        m = c.match(html)
+        body = m.group(2)
+        body = body.replace('../../resources/images/', 'static/jwc/')
+        content = body.decode('gbk')
+
+
+        ############  END
+
+        if not content:     # 如果此时网站不能正常访问，则加入列表，自动后台 cron job
+            # add to list.
+            user = models.User(key_name=student_no)    # uid is key.
+            user.student_no = student_no
             user.passwd = passwd
             user.email = email
             user.date = util.time_now()   # +8.
             user.put()  # store
-            self.redirect('/getgrades?' + urllib.urlencode({'student_no': uid}))
-        except:
-            self.redirect('/')
-
-class GetGrades(webapp2.RequestHandler):
-    def get(self):
-        student_no = self.request.get('student_no')
-
-        user_key = db.Key.from_path('User', student_no)
-        user = db.get(user_key)
-        grades = core.jwc.Grades(student_no, user.passwd)
-        content = grades.getGrades()
-
-        if not content:     # 如果此时网站不能正常访问，则加入列表，自动后台 cron job
-            # add to list.
             template_values = {
                 'user': user
             }
@@ -76,10 +121,6 @@ class GetGrades(webapp2.RequestHandler):
 
         logging.info('%s done.' % student_no)
 
-        passwd = user.passwd    # backup
-        email = user.email
-        db.delete(user_key) # delete from list.
-
         user_done = models.User_done(key_name=student_no)   # add to done_list.
         user_done.student_no = student_no
         user_done.passwd = passwd
@@ -88,13 +129,12 @@ class GetGrades(webapp2.RequestHandler):
         user_done.put()  # store
 
         template_values = {
-            'content': grades.getGrades()
+            'content': content
         }
         template = jinja_environment.get_template('showgrades.html')
         self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/submit', Submit),
-    ('/getgrades', GetGrades)
+    ('/submit', Submit)
     ],debug=True)

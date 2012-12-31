@@ -12,5 +12,5 @@ def test():
 
 if __name__ == '__main__':
     """ run at local """
-    grades = jwc.Grades('13101249', 'passwd', isGAE=False)
+    grades = jwc.Grades('13101249', '123123go', isGAE=False)
     print grades.getGrades()
